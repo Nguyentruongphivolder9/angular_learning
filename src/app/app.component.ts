@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'Angular Website';
   parentMessage:string = 'Message Changed';
   message:string | undefined;
+  fromChildOutput:string | undefined;
 
   @ViewChild(PostComponent) childComp: any;
 
@@ -20,5 +21,9 @@ export class AppComponent {
   ngAfterViewInit() {
     console.log(this.childComp)
     this.message = this.childComp.childMessage
+  }
+
+  reciveMessage($event: any){
+    this.fromChildOutput = $event;
   }
 }
