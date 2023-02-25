@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { PostComponent } from './post/post.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'project_with_angular';
+  title = 'Angular Website';
+  parentMessage:string = 'Message Changed';
+
+  @ViewChild(PostComponent) childComp: any;
+
+  constructor() {
+    console.log(this.childComp);
+  }
 }
