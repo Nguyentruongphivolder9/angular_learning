@@ -9,10 +9,16 @@ import { PostComponent } from './post/post.component';
 export class AppComponent {
   title = 'Angular Website';
   parentMessage:string = 'Message Changed';
+  message:string | undefined;
 
   @ViewChild(PostComponent) childComp: any;
 
   constructor() {
     console.log(this.childComp);
+  }
+
+  ngAfterViewInit() {
+    console.log(this.childComp)
+    this.message = this.childComp.childMessage
   }
 }
