@@ -1,7 +1,34 @@
-<h1>Angular App</h1>
+<!-- class binding -->
+<!-- <h1 [class.text-blue] = "bool">Angular App</h1> -->
 
-<p>{{ message }}</p>
+<!-- style binding -->
+<!-- <h1 [style.color]="bool ? 'blue' : 'red' ">Style Binding</h1> -->
 
-<app-navbar></app-navbar>
-<app-post [fromParent]='parentMessage' (messageEvent)="reciveMessage($event)"></app-post>
-<p>{{ fromChildOutput }}</p>
+<!-- event binding -->
+<!-- <button (click)="buttonClick()">Click Me</button> -->
+
+<!-- event filtering  -->
+<!-- <input type="text" (keyup.enter)="onKeyup(username.value)" #username> -->
+<!-- two way data binding -->
+<!-- <input type="text" [(ngModel)] = "username" (keyup.enter)="onKeyup()"> -->
+
+<!-- one-way, two-way data binding -->
+<!-- <input [value]='textValues' (keyup.enter)="onKeyup()"> -->
+
+<!-- <input type="text" [(ngModel)]='textValues' (keyup.enter)="onKeyup()"> -->
+
+<div class="form-area">
+  <h1>Post Form</h1>
+  <input type="text" placeholder="Post Title" [(ngModel)]='postTitle'>
+  <textarea cols="30" rows="10" placeholder="Post Details" [(ngModel)]='postDetail'></textarea>
+  <input type="text" placeholder="Post Image URL" [(ngModel)]='postImage'>
+  <input type="text" placeholder="Post URL" [(ngModel)]='postURL'>
+  <p><input type="checkbox" [(ngModel)]='addBackground'> Add Backgroud</p>
+</div>
+
+<div class="preview-area">
+  <h1><span [class.add-background]="addBackground">{{ postTitle }}</span></h1>
+  <p>{{ postDetail }}</p>
+  <a [href]="postURL" target="_blank" [style.display]="postURL ? 'block' : 'none' ">More Details</a>
+  <img [src]="postImage" alt="">
+</div>

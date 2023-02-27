@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { PostComponent } from './post/post.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,23 +6,24 @@ import { PostComponent } from './post/post.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular Website';
-  parentMessage:string = 'Message Changed';
-  message:string | undefined;
-  fromChildOutput:string | undefined;
 
-  @ViewChild(PostComponent) childComp: any;
+  bool:boolean = true;
 
-  constructor() {
-    console.log(this.childComp);
-  }
+  // username: string | undefined;
+  // textValues: string = "Values Click Event Worked";
 
-  ngAfterViewInit() {
-    console.log(this.childComp)
-    this.message = this.childComp.childMessage
-  }
+  // buttonClick() {
+  //   console.log('Button Click Event Worked');
+  // }
 
-  reciveMessage($event: any){
-    this.fromChildOutput = $event;
-  }
+  // onKeyup() {
+  //   console.log(this.textValues);
+  // }
+
+  postTitle: string | undefined;
+  postDetail: string | undefined;
+  postImage: string | undefined;
+  postURL: string | undefined;
+  addBackground: boolean | undefined;
+
 }

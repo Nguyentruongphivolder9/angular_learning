@@ -1,0 +1,21 @@
+.text-blue{
+  color: aqua;
+}
+
+.form-area, .preview-area{
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  height: auto;
+  text-align: center;
+  margin: auto;
+}
+
+input, textarea{
+  margin-top: 20px;
+}
+
+.add-background{
+  background-color: yellow;
+  padding: 10px;
+}
