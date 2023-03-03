@@ -43,3 +43,16 @@
   <div *ngSwitchCase="'step 2'">Step 2 Form</div>
   <div *ngSwitchCase="'step 3'">Step 3 Form</div>
 </div>
+
+<p>NgStyle Derective</p>
+
+<h1
+  [style.color]="isAcrive ? 'red' : 'black'"
+  [style.textTransform] = "isAcrive ? 'uppercase' : 'lowercase'"
+>Angular Udemy Course</h1>
+<h1
+  [ngStyle]="{
+    color: isAcrive ? 'red' : 'balck',
+    textTransform: isAcrive ? 'uppercase' : 'lowercase'
+  }"
+>Angular Udemy Course</h1>

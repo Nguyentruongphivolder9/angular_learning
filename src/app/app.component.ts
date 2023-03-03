@@ -19,6 +19,8 @@ export class AppComponent {
 
   stepForm: string = 'Something to do';
 
+  isAcrive: boolean = true;
+
   constructor() {
     for(let i = 0; i < this.postArray.length; i++){
       console.log(this.postArray[i]);
