@@ -1,34 +1,45 @@
-<!-- class binding -->
-<!-- <h1 [class.text-blue] = "bool">Angular App</h1> -->
+<p>{{ postArray }}</p>
 
-<!-- style binding -->
-<!-- <h1 [style.color]="bool ? 'blue' : 'red' ">Style Binding</h1> -->
+<ul>
+  <li>{{ postArray[0] }}</li>
+  <li>{{ postArray[1] }}</li>
+  <li>{{ postArray[2] }}</li>
+  <li>{{ postArray[3] }}</li>
+  <li>{{ postArray[4] }}</li>
+</ul>
 
-<!-- event binding -->
-<!-- <button (click)="buttonClick()">Click Me</button> -->
+<p>Fetched Using ngFor Directive</p>
+<ul>
+  <li *ngFor="let post of postArray">{{ post }}</li>
+</ul>
 
-<!-- event filtering  -->
-<!-- <input type="text" (keyup.enter)="onKeyup(username.value)" #username> -->
-<!-- two way data binding -->
-<!-- <input type="text" [(ngModel)] = "username" (keyup.enter)="onKeyup()"> -->
+<p>Fetching Object Array</p>
 
-<!-- one-way, two-way data binding -->
-<!-- <input [value]='textValues' (keyup.enter)="onKeyup()"> -->
+<button (click)="addNew()">Add new data</button>
 
-<!-- <input type="text" [(ngModel)]='textValues' (keyup.enter)="onKeyup()"> -->
+<div *ngIf="objArray.length > 0; then postList else nodata"></div>
 
-<div class="form-area">
-  <h1>Post Form</h1>
-  <input type="text" placeholder="Post Title" [(ngModel)]='postTitle'>
-  <textarea cols="30" rows="10" placeholder="Post Details" [(ngModel)]='postDetail'></textarea>
-  <input type="text" placeholder="Post Image URL" [(ngModel)]='postImage'>
-  <input type="text" placeholder="Post URL" [(ngModel)]='postURL'>
-  <p><input type="checkbox" [(ngModel)]='addBackground'> Add Backgroud</p>
+<ng-template #postList>
+  <ul>
+    <li *ngFor="let post of objArray; let i = index">
+      {{ i }} {{ post.postTitle }}
+      <button (click)="onDelete(i)">Delete data</button>
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #nodata>
+  <p>There is no Data to fetch ...</p>
+</ng-template>
+
+<div>
+  <button (click)="onClick('step 1')">Step 1</button>
+  <button (click)="onClick('step 2')">Step 2</button>
+  <button (click)="onClick('step 3')">Step 3</button>
 </div>
-
-<div class="preview-area">
-  <h1><span [class.add-background]="addBackground">{{ postTitle }}</span></h1>
-  <p>{{ postDetail }}</p>
-  <a [href]="postURL" target="_blank" [style.display]="postURL ? 'block' : 'none' ">More Details</a>
-  <img [src]="postImage" alt="">
+<div [ngSwitch]="stepForm">
+  <div *ngSwitchDefault="'step 1'">Step 1 Form</div>
+  <div *ngSwitchCase="'step 1'">Step 1 Form</div>
+  <div *ngSwitchCase="'step 2'">Step 2 Form</div>
+  <div *ngSwitchCase="'step 3'">Step 3 Form</div>
 </div>

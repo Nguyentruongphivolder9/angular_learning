@@ -7,23 +7,33 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  bool:boolean = true;
+  postArray: Array<string> = ['Post 1', 'Post 2', 'Post 3', 'Post 4', 'Post 5'];
 
-  // username: string | undefined;
-  // textValues: string = "Values Click Event Worked";
+  objArray: Array<any> = [
+    // {id: 1, postTitle: 'Post 1'},
+    // {id: 2, postTitle: 'Post 2'},
+    // {id: 3, postTitle: 'Post 3'},
+    // {id: 4, postTitle: 'Post 4'},
+    // {id: 5, postTitle: 'Post 5'}
+  ]
 
-  // buttonClick() {
-  //   console.log('Button Click Event Worked');
-  // }
+  stepForm: string = 'Something to do';
 
-  // onKeyup() {
-  //   console.log(this.textValues);
-  // }
+  constructor() {
+    for(let i = 0; i < this.postArray.length; i++){
+      console.log(this.postArray[i]);
+    }
+  }
 
-  postTitle: string | undefined;
-  postDetail: string | undefined;
-  postImage: string | undefined;
-  postURL: string | undefined;
-  addBackground: boolean | undefined;
+  addNew() {
+    this.objArray.push({id: 6, postTitle: 'Post 6'});
+  }
 
+  onDelete(index: any){
+    this.objArray.splice(index, 1);
+  }
+
+  onClick(status: any){
+    this.stepForm = status;
+  }
 }
