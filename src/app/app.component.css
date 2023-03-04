@@ -3,8 +3,6 @@
 }
 
 .form-area, .preview-area{
-  display: flex;
-  flex-direction: column;
   max-width: 500px;
   height: auto;
   text-align: center;

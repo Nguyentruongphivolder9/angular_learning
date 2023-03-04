@@ -21,6 +21,10 @@ export class AppComponent {
 
   isAcrive: boolean = false;
 
+  name:string | undefined;
+  email:string | undefined;
+  address:string | undefined;
+
   constructor() {
     for(let i = 0; i < this.postArray.length; i++){
       console.log(this.postArray[i]);
