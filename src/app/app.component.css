@@ -19,3 +19,12 @@ input, textarea{
   background-color: yellow;
   padding: 10px;
 }
+
+.main{
+  color: red;
+  text-transform: uppercase;
+}
+
+.text-weight{
+  font-weight: bold;
+}

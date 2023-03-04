@@ -45,14 +45,27 @@
 </div>
 
 <p>NgStyle Derective</p>
-
-<h1
+<!-- <h1
   [style.color]="isAcrive ? 'red' : 'black'"
   [style.textTransform] = "isAcrive ? 'uppercase' : 'lowercase'"
->Angular Udemy Course</h1>
+>Angular Udemy Course</h1> -->
 <h1
   [ngStyle]="{
     color: isAcrive ? 'red' : 'balck',
     textTransform: isAcrive ? 'uppercase' : 'lowercase'
   }"
 >Angular Udemy Course</h1>
+
+<p>NgClass Derective</p>
+<h1
+[class.main]="isAcrive"
+[class.text-weight]="isAcrive"
+>Angular Udemy Course</h1>
+<h1
+[ngClass]="{
+  'main' : isAcrive,
+  'text-weight' : isAcrive
+}"
+>angular udemy course</h1>
+
+
